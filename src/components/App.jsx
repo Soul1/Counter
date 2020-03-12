@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.scss';
-import Counter from "./Counter";
-import SetCount from "./SetCount";
+import Counter from "../containers/Counter";
+import SetCount from "../components/SetCount";
 
 function App() {
   return (
