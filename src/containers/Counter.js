@@ -13,15 +13,17 @@ class CounterContainer extends React.Component {
     this.isResetDis();
   };
 
-  resetClick = () => {
-    this.props.reset();
+  resetClick = async () => {
+    await this.props.reset();
+    this.isIncDis();
     this.isResetDis();
   };
 
   isIncDis = () => {
     if (this.props.count > this.props.countMax - 1) {
       this.props.incDis()
-    } else {
+    }
+    if (this.props.count < this.props.countMax) {
       this.props.incActive()
     }
   };

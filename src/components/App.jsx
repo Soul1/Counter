@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.scss';
+import '../scss/App.scss';
 import Counter from "../containers/Counter";
 import SetCount from "../components/SetCount";
 

@@ -1,0 +1,40 @@
+.counter{
+  &__inner{
+    width: 450px;
+    height: 300px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.31);
+    text-align: center;
+    margin: 350px auto 0;
+  }
+  &-count{
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.46);
+    color: #fff;
+    padding: 40px 15px;
+    font-size: 90px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #fff;
+  }
+  &-btn{
+    & button {
+      padding: 10px 15px;
+      border: none;
+      font-size: 24px;
+      font-weight: 600;
+      background-color: rgba(0, 0, 0, 0.67);
+      color: #fff;
+    }
+    &__inc{
+
+    }
+    &__reset{
+      margin-left: 30px;
+    }
+    &__dis{
+      color: rgba(255, 255, 255, 0.58) !important;
+    }
+  }
+}

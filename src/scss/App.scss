@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body{
+  background-image: url('https://million-wallpapers.ru/wallpapers/4/30/17358033082029695201/planety.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+  display: inline-block;
+}
+
+.app {
+  margin: 0 auto;
+  text-align: center;
+
+}
