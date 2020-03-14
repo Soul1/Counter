@@ -1,6 +1,6 @@
 const initialState = {
-  maxCounter: 5,
-  startCounter: 0,
+  maxCounter: null,
+  startCounter: null,
   counterSetDisable: false,
 };
 
@@ -13,25 +13,21 @@ export default (state = initialState, action) => {
         ...state,
         maxCounter: action.payload,
       };
-      break;
     case 'START_COUNT':
       return {
         ...state,
         startCounter: action.payload,
       };
-      break;
     case 'SET_ACTIVE':
       return {
         ...state,
         counterSetDisable: false,
       };
-      break;
     case 'SET_DISABLE':
       return {
         ...state,
         counterSetDisable: true,
       };
-      break;
     default:
       return state
   }

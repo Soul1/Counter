@@ -4,19 +4,23 @@
     height: 300px;
     border: 2px solid #fff;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.31);
+    background-color: rgba(0, 0, 0, 0.45);
     text-align: center;
-    margin: 350px auto 0;
+    margin: 350px 0 0;
   }
   &-count{
     z-index: 3;
-    background-color: rgba(255, 255, 255, 0.46);
+    background-color: rgba(255, 255, 255, 0.45);
     color: #fff;
-    padding: 40px 15px;
-    font-size: 90px;
+    padding: 74px 15px 75px;
+    font-size: 32px;
     font-weight: 700;
     margin-bottom: 25px;
     border-bottom: 2px solid #fff;
+    &.counter-count--size{
+      padding: 40px 15px;
+      font-size: 90px;
+    }
   }
   &-btn{
     & button {
@@ -32,9 +36,6 @@
     }
     &__reset{
       margin-left: 30px;
-    }
-    &__dis{
-      color: rgba(255, 255, 255, 0.58) !important;
     }
   }
 }

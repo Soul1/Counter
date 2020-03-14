@@ -8,7 +8,7 @@ html {
   box-sizing: inherit;
 }
 
-body{
+body {
   background-image: url('https://million-wallpapers.ru/wallpapers/4/30/17358033082029695201/planety.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,8 +24,23 @@ ul, li {
   display: inline-block;
 }
 
-.app {
-  margin: 0 auto;
-  text-align: center;
+button:disabled{
+  color: rgba(255, 255, 255, 0.58) !important;
+  border: 1px solid #f00 !important;
+}
 
+.app {
+  margin: 0 auto !important;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  width: 100%;
+  &__set-count {
+    margin: 350px 0 0;
+  }
+
+  &__counter {
+
+  }
 }

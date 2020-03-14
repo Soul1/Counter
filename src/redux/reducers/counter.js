@@ -1,6 +1,6 @@
 const initialState = {
-  count: 0,
-  counterIncDisable: false,
+  count: null,
+  counterIncDisable: true,
   counterResetDisable: true,
 };
 
@@ -35,7 +35,7 @@ export default (state = initialState, action) => {
     case 'RESET':
       return {
         ...state,
-        count: 0
+        count: action.payload
       };
     default:
       return state

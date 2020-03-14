@@ -1,0 +1,28 @@
+.set{
+  &__inner{
+    width: 450px;
+    height: 300px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.45);
+    text-align: center;
+  }
+  &__info{
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    padding: 56px 15px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #fff;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__title{
+    width: 100px;
+    margin: 0px 10px;
+  }
+}
