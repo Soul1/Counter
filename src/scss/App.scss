@@ -40,7 +40,9 @@ button:disabled{
     margin: 350px 0 0;
   }
 
-  &__counter {
+}
 
-  }
+.error{
+  border: 1px solid #f00;
+  background-color: #f00;
 }

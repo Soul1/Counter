@@ -9,26 +9,21 @@ class CounterContainer extends React.Component {
     if (this.props.count < this.props.countMax) {
       await this.props.inc(this.props.count + 1)
     }
-    this.isIncDis();
-    this.isResetDis();
+    this.isDis();
   };
 
   resetClick = async () => {
     await this.props.reset(this.props.countStart);
-    this.isIncDis();
-    this.isResetDis();
+    this.isDis();
   };
 
-  isIncDis = () => {
+  isDis = () => {
     if (this.props.count > this.props.countMax - 1) {
       this.props.incDis()
     }
     if (this.props.count < this.props.countMax) {
       this.props.incActive()
     }
-  };
-
-  isResetDis = () => {
     if (this.props.count > this.props.countStart) {
       this.props.resetActive()
     }
@@ -42,10 +37,10 @@ class CounterContainer extends React.Component {
       incClick={this.incClick}
       resetClick={this.resetClick}
       count={this.props.count}
-      isIncDis={this.isIncDis}
-      isResetDis={this.isResetDis}
+      countMax={this.props.countMax}
       incDisable={this.props.incDisable}
       resetDisable={this.props.resetDisable}
+      err={this.props.err}
     />
   }
 }
@@ -54,6 +49,7 @@ const mapStateToProps = (state) => ({
   count: state.counter.count,
   countMax: state.setCounter.maxCounter,
   countStart: state.setCounter.startCounter,
+  err: state.setCounter.error,
   incDisable: state.counter.counterIncDisable,
   resetDisable: state.counter.counterResetDisable
 });

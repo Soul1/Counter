@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import SetCount from "../components/SetCount";
-import {maxCount, startCount, setDis, setActive} from '../redux/actions/setCounter'
+import {maxCount, startCount, setDis, setActive, error} from '../redux/actions/setCounter'
 import {inc, incDis, incActive, resetDis,} from '../redux/actions/counter'
 import React, {Component} from 'react';
 
@@ -24,20 +24,26 @@ class SetCountContainer extends Component {
   };
 
   setStartCounter = () => {
-    this.isDis();
     this.props.inc(this.startValue);
+    this.props.setDis();
+    this.isDis();
     this.props.incActive()
   };
 
-  isDis = () => {
-    if (this.props.startCounter === this.startValue || this.props.maxCounter === this.maxValue) {
+  isDis =  () => {
+    if (this.startValue >= this.maxValue || this.startValue < 0 || this.maxValue < 0) {
+      this.props.error(true);
+      this.props.setDis();
+      this.props.incDis();
+      return;
+    }
+    if (this.props.startCounter === this.startValue && this.props.maxCounter === this.maxValue) {
+      this.props.error(false);
       this.props.setActive();
       this.props.incDis();
       this.props.resetDis();
     } else {
       this.props.setDis();
-      this.props.incDis();
-      this.props.resetDis();
     }
   };
 
@@ -49,6 +55,7 @@ class SetCountContainer extends Component {
       maxCounter={this.props.maxCounter}
       startCounter={this.props.startCounter}
       setDisable={this.props.setDisable}
+      err={this.props.err}
     />
   }
 }
@@ -57,9 +64,10 @@ const mapStateToProps = (state) => ({
   maxCounter: state.setCounter.maxCounter,
   startCounter: state.setCounter.startCounter,
   setDisable: state.setCounter.counterSetDisable,
+  err: state.setCounter.error,
 });
 
 export default connect(
   mapStateToProps,
-  {maxCount, startCount, setDis, setActive, inc, incDis, incActive, resetDis,})
+  {maxCount, startCount, setDis, setActive, inc, incDis, incActive, resetDis, error,})
 (SetCountContainer)

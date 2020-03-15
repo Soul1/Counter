@@ -1,7 +1,8 @@
 const initialState = {
   maxCounter: null,
   startCounter: null,
-  counterSetDisable: false,
+  counterSetDisable: true,
+  error: false,
 };
 
 export default (state = initialState, action) => {
@@ -27,6 +28,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         counterSetDisable: true,
+      };
+    case 'SET_ERROR':
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state

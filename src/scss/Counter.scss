@@ -15,7 +15,6 @@
     padding: 74px 15px 75px;
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 25px;
     border-bottom: 2px solid #fff;
     &.counter-count--size{
       padding: 40px 15px;
@@ -23,19 +22,20 @@
     }
   }
   &-btn{
+    padding: 30px 0;
     & button {
       padding: 10px 15px;
-      border: none;
+      border:  1px solid rgba(0, 0, 0, 0.7);
       font-size: 24px;
       font-weight: 600;
-      background-color: rgba(0, 0, 0, 0.67);
+      background-color: rgba(0, 0, 0, 0.7);
       color: #fff;
-    }
-    &__inc{
-
     }
     &__reset{
       margin-left: 30px;
     }
   }
+}
+.red{
+  color: #f00 !important;
 }
